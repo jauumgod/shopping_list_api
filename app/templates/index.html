@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Documentação</title>
+</head>
+<body>
+    <nav class="navbar justify-content-center navbar-dark bg-dark" >
+        <a class="navbar-brand" href="#">Documentação</a>
+      </nav>
+      <br>
+    <p align="center">Essa aplicação consiste em poder adicionar items dentro de uma api que foi totalmente desenvolvida em python/flask por mim. A aplicação tem metodos de GET, POST, PUT, DELETE até o presente momento.Com esse método, você pode buscar qualquer tipo de informação de um determinado formulário. No cadastro de API, marque o método como "GET" e clique na opção "Configurar API para Listagem
+        o link para acessar a api: <img src="https://img.shields.io/badge/API-3776AB?style=for-the-badge&logo=api&logoColor=white">
+
+    </p>
+
+    <h2>Retorno de uma requisição <img src="https://img.shields.io/badge/GET-3776A5B?style=for-the-badge&logo=api&logoColor=white"></h2><br>
+    <pre class="CodeMirror" role="presentation">
+        <span class="cm-string cm-property">"result": {
+            "id" : 1,
+            "nome": "nome.usuario",
+            "cpf": 705.559.632-99,
+            "sexo": "M"
+            }</span>
+
+
+    <h3>STATUS HEADER DE RETORNO DE UMA API</h3>
+
+    <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+            <th scope="col">COD.</th>
+            <th scope="col">Mensagem</th>
+            <th scope="col-3">Descrição</th>
+            </tr>
+        </thead>
+            <tbody>
+            <tr>
+                <td scope="row"><strong>400</strong></th>
+                <td>Bad Request</td>
+                <td scope="row">Houve algum erro inesperado pela API, verifica se em alguma programação existe um erro de sintaxe ou algo parecido.</td>
+            </tr>
+            <tr>
+                <td scope="row"><strong>401</strong></th>
+                <td>Unauthorized</td>
+                <td scope="row">	Possíveis causas:
+                Provavelmente o usuário API que você está tentando executar não tem permissão para essa execução.
+                O Accesstoken que você está usando para executar a API está vencido. O AccessToken  tem uma duração máxima de 5 minutos, após esse período é necessário cria-lo novamente.
+                Ou você estar tentando executar uma API que não está configurada</td>
+            </tr>
+            <tr>
+                <td scope="row"><strong>404</strong></th>
+                <td>Not Found</td>
+                <td scope="row">Api não encontrada.</td>
+            </tr>
+            <tr>
+                <td scope="row"><strong>405</strong></th>
+                <td>Method not Allowed</td>
+                <td scope="row">Possíveis causas:
+                    Provavelmente o usuário API que você está tentando executar não tem permissão para essa execução.
+                    O Accesstoken que você está usando para executar a API está vencido. O AccessToken  tem uma duração máxima de 5 minutos, após esse período é necessário cria-lo novamente.
+                    Ou você estar tentando executar uma API que não está configurada
+                </td>
+            </tr>
+            <tr>
+                <td scope="row"><strong>200</strong></th>
+                <td>OK</td>
+                <td scope="row">Deu tudo certo.</td>
+            </tr>
+            </tbody>
+    </table>
+</body>
+</html>

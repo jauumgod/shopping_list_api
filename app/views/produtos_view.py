@@ -25,6 +25,7 @@ class ItemViewList(Resource):
 
             print(f"meu print: {novo_item.nome, novo_item.quantidade}")
             resultado = produtos_service.ProdutosService.create(novo_item)
+            
             if resultado == True:
                 return make_response(IS.jsonify(resultado), 201)
             else:

@@ -23,7 +23,6 @@ class UserListView(Resource):
             senha = request.json["senha"]
             usuario_novo = user.User(nome=nome, senha=senha)
             
-            print(usuario_novo.nome, usuario_novo.senha)
             resultado = user_service.UserService.create(usuario_novo)
             if resultado == True:
                 return make_response(us.jsonify(resultado), 201)

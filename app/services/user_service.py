@@ -7,14 +7,16 @@ class UserService():
 
     def create(usuario):
         query = UserModel.query.filter_by(nome=usuario.nome).first()
-        if query.nome == usuario.nome:
-            return False
-        else:
+
+        if query is None:
             create_data = UserModel(nome=usuario.nome, senha = usuario.senha)
             create_data.cripto_senha()
             db.session.add(create_data)
             db.session.commit()
             return True
+        
+        else:
+            return False
 
 
     def read_all():

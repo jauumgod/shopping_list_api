@@ -6,16 +6,19 @@ from ..models.produtos_model import ProdutosModel
 class ProdutosService():
 
     def create(produto):
+       
         query = ProdutosModel.query.filter_by(nome = produto.nome).first()
-        
-        if query.nome == produto.nome:
-            return False
-        
-        else:
+        print(type(query))
+
+        if query is None:
             create_item = ProdutosModel(nome = produto.nome, quantidade=produto.quantidade)
             db.session.add(create_item)
             db.session.commit()
-            return True
+            return True 
+    
+        else:
+            return False
+
 
     def read_all():
         all = produtos_model.ProdutosModel.query.all()

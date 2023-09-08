@@ -5,6 +5,7 @@ from ..schemas import produtos_schemas
 from ..services  import produtos_service
 from ..entities import produtos
 from flask import request, make_response, jsonify
+from errors import erros
 
 
 class ItemViewList(Resource):
@@ -23,11 +24,14 @@ class ItemViewList(Resource):
         else:
             nome = request.json['nome']
             quantidade = request.json['quantidade']
-            novo_item = produtos.Items(nome=nome, quantidade=quantidade)
+            novo_item = produtos.Produtos(nome=nome, quantidade=quantidade)
 
             print(f"meu print: {novo_item.nome, novo_item.quantidade}")
             resultado = produtos_service.ProdutosService.create(novo_item)
-            return make_response(IS.jsonify(resultado), 201)
+            if resultado == True:
+                return make_response(IS.jsonify(resultado), 201)
+            else:
+                return make_response(jsonify(erros.ItemErrorMessages.ITEM_EXISTS),erros.StatusCode.STATUSCODE_422)
 
 
 
@@ -58,5 +62,5 @@ class ItemViewDetails(Resource):
         return make_response(jsonify(""), 204)
 
 
-api.add_resource(ItemViewList, '/item')
-api.add_resource(ItemViewDetails, '/item/<int:id>')
+api.add_resource(ItemViewList, '/products')
+api.add_resource(ItemViewDetails, '/products/<int:id>')

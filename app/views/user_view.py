@@ -4,6 +4,7 @@ from ..schemas import user_schemas
 from flask import request, make_response, jsonify
 from ..entities import user
 from ..services import user_service
+from ..errors import erros
 
 
 class UserListView(Resource):
@@ -26,7 +27,10 @@ class UserListView(Resource):
             
             print(usuario_novo.nome, usuario_novo.senha)
             resultado = user_service.UserService.create(usuario_novo)
-            return make_response(us.jsonify(resultado), 201)
+            if resultado == True:
+                return make_response(us.jsonify(resultado), 201)
+            else:
+               return make_response(jsonify(erros.UserErrorMessages.USER_EXISTS), erros.StatusCode.STATUSCODE_422)
 
 
         

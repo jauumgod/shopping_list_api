@@ -10,6 +10,7 @@ class UserErrorMessages:
 class ItemErrorMessages:
     ITEM_EXISTS = "não foi possivel cadastrar, pois o item já existe."
     ITEM_NOT_FIND = "item não foi encontrado."
+    ERROR_REQUISITION = "Erro na requisição."
 
 
 class StatusCode:

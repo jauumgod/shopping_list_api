@@ -19,10 +19,12 @@ class ShoppingListView(Resource):
             return make_response(jsonify(validate),400)
         else:
             username = request.json["username"]
-            date_create = date.today()
-
+            date_create = date.today
             novo_shopping_list = shopping.Shopping(username=username, date_create=date_create)
             resultado = shoppinglist_service.ShoppingListService.create(novo_shopping_list)
-            return make_response(ss.jsonify(resultado), 201)
+            if resultado == True:
+                return make_response(ss.jsonify(resultado), 201)
+            else:
+                return make_response(jsonify("erro na requisição"), 422)
 
 api.add_resource(ShoppingListView, '/shoppinglist')

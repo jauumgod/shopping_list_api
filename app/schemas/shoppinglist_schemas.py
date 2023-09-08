@@ -9,4 +9,4 @@ class ShoppingListSchemas(ma.SQLAlchemyAutoSchema):
         load_instance = True
 
     username = fields.Integer(required=True)
-    date_create = fields.Date(required=True)
+    date_create = fields.Date(required=False)

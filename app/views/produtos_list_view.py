@@ -1,4 +1,5 @@
 from app import api, Resource, request, make_response, jsonify
+from ..errors_messages import errors
 from ..schemas import produtolist_schemas
 from ..entities import produto_lista
 from ..services import produtolist_service
@@ -30,6 +31,10 @@ class ProdutosListView(Resource):
                 lista_id_key=lista_id_key,
                 produto_id_key=produto_id_key)
             resultado = produtolist_service.ProdutoListService.create(novo_produto_list)
-            return make_response(ss.jsonify(resultado), 201)
+            
+            if resultado ==True:
+                return make_response(ss.jsonify(resultado), 201)
+            else:
+                return make_response(jsonify(errors.ItemErrorMessages.ERROR_REQUISITION), errors.StatusCode.STATUSCODE_422)
 
 api.add_resource(ProdutosListView, '/produtoslistview')

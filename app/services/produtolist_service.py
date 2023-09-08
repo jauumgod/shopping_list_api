@@ -1,6 +1,6 @@
 from ..models import produtolista_model
 from ..models.produtolista_model import ProdutoLista
-
+from app import db
 
 
 class ProdutoListService():
@@ -13,8 +13,9 @@ class ProdutoListService():
             lista_id_key = produtolist.lista_id_key,
             produto_id_key = produtolist.produto_id_key
         )
-        create_produto_list.session.add()
-        create_produto_list.session.commit()
+        db.session.add(create_produto_list)
+        db.session.commit()
+        return True
 
     def read():
         query = ProdutoLista.query.all()

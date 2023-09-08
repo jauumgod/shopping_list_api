@@ -1,6 +1,6 @@
-from app import ma
+from app import ma, fields
 from ..models import produtos_model
-from marshmallow import fields
+
 
 
 class ProdutosSchemas(ma.SQLAlchemyAutoSchema):

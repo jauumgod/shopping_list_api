@@ -1,6 +1,5 @@
-from app import ma
+from app import ma, fields
 from ..models import produtolista_model
-from marshmallow import fields
 
 class ProdutoListSchema(ma.SQLAlchemyAutoSchema):
     class Meta:

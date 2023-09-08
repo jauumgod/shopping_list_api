@@ -1,11 +1,6 @@
 from ..schemas import login_schemas
-from app import api
-from flask_restful import Resource
+from app import api, Resource, timedelta, create_access_token, create_refresh_token, request, make_response, jsonify
 from ..services.user_service import UserService
-from ..models.user_model import UserModel
-from datetime import timedelta
-from flask_jwt_extended import create_access_token, create_refresh_token
-from flask import request, make_response, jsonify
 
 class LoginListView(Resource):
     
@@ -36,9 +31,9 @@ class LoginListView(Resource):
                     'mensagem': 'Login Realizado com sucesso!'
                 }),200)
         
-        return make_response(
-            jsonify({'mensagem': 'credenciais invalidas'}), 400
-        )
+        # return make_response(
+        #     jsonify({'mensagem': 'credenciais invalidas'}), 400
+        # )
 
             
 api.add_resource(LoginListView, "/login")

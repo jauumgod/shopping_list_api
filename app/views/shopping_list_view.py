@@ -1,11 +1,8 @@
-from flask_restful import Resource
-from app import api
+from app import api, Resource, request, make_response, jsonify, date
 from ..schemas import shoppinglist_schemas
-from flask import request, make_response, jsonify
 from ..entities import shopping
 from ..services import shoppinglist_service
 
-from datetime import date
 
 
 class ShoppingListView(Resource):

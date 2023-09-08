@@ -1,5 +1,4 @@
 from app import db
-from flask import make_response, jsonify
 from ..models import user_model
 from ..models.user_model import UserModel
 

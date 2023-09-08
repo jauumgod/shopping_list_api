@@ -3,8 +3,6 @@ from ..models.produtolista_model import ProdutoLista
 
 
 
-
-
 class ProdutoListService():
 
     def create(produtolist):

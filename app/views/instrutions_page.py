@@ -1,9 +1,6 @@
-from flask_restful import Resource
-from app import api
 from ..schemas.history_schemas import HistorySchema
 from ..services import history_service
-from flask import request, make_response, jsonify, render_template, url_for
-from app import app
+from app import app, request, make_response, jsonify, render_template, url_for, api, Resource
 
 class PaginaVazia(Resource):
 

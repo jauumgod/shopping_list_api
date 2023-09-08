@@ -1,6 +1,4 @@
-
-from datetime import datetime
-from app import db 
+from app import db, datetime
 
 
 class HistoryModel(db.Model):

@@ -1,5 +1,4 @@
-from app import ma
-from marshmallow import fields
+from app import ma, fields
 
 from app.models import shoppinglist_model
 

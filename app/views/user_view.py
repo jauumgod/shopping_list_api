@@ -1,7 +1,5 @@
-from flask_restful import Resource
-from app import api
+from app import api, Resource, request, make_response, jsonify
 from ..schemas import user_schemas
-from flask import request, make_response, jsonify
 from ..entities import user
 from ..services import user_service
 from ..errors_messages import errors

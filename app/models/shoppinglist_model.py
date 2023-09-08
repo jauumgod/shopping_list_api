@@ -1,5 +1,4 @@
-from datetime import datetime
-from app import db
+from app import db, datetime
 
 class ShoppingList(db.Model):
     __tablename__ = "tab_shoppinglist"

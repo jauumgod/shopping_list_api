@@ -1,7 +1,6 @@
 
-from app import ma
+from app import ma, fields
 from ..models import history_model
-from marshmallow import fields
 
 
 class HistorySchema(ma.SQLAlchemyAutoSchema):

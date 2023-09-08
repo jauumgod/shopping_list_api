@@ -1,13 +1,8 @@
 
-from flask_restful import Resource
-from app import api
+from app import api, date, Resource, request, make_response, jsonify
 from ..schemas.history_schemas import HistorySchema
 from ..services import history_service
 from ..entities import historico
-from flask import request, make_response, jsonify
-
-from datetime import date
-
 
 
 class HistoryViewList(Resource):

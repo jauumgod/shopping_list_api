@@ -5,7 +5,7 @@ from ..schemas import produtos_schemas
 from ..services  import produtos_service
 from ..entities import produtos
 from flask import request, make_response, jsonify
-from errors import erros
+from ..errors_messages import errors
 
 
 class ItemViewList(Resource):
@@ -31,7 +31,7 @@ class ItemViewList(Resource):
             if resultado == True:
                 return make_response(IS.jsonify(resultado), 201)
             else:
-                return make_response(jsonify(erros.ItemErrorMessages.ITEM_EXISTS),erros.StatusCode.STATUSCODE_422)
+                return make_response(jsonify(errors.ItemErrorMessages.ITEM_EXISTS),errors.StatusCode.STATUSCODE_422)
 
 
 

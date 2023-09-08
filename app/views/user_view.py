@@ -4,7 +4,7 @@ from ..schemas import user_schemas
 from flask import request, make_response, jsonify
 from ..entities import user
 from ..services import user_service
-from ..errors import erros
+from ..errors_messages import errors
 
 
 class UserListView(Resource):
@@ -30,7 +30,7 @@ class UserListView(Resource):
             if resultado == True:
                 return make_response(us.jsonify(resultado), 201)
             else:
-               return make_response(jsonify(erros.UserErrorMessages.USER_EXISTS), erros.StatusCode.STATUSCODE_422)
+               return make_response(jsonify(errors.UserErrorMessages.USER_EXISTS), errors.StatusCode.STATUSCODE_422)
 
 
         

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\joao.marinho\Desktop\flutter_applications\api_shopping_list\back_end\venv-shopping"
+VIRTUAL_ENV="C:\Users\joao.marinho\Desktop\flutter_fullStack\shopping_list_api\venv-shopping"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

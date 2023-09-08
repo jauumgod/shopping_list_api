@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\joao.marinho\Desktop\flutter_applications\api_shopping_list\back_end\venv-shopping
+set VIRTUAL_ENV=C:\Users\joao.marinho\Desktop\flutter_fullStack\shopping_list_api\venv-shopping
 
 if not defined PROMPT set PROMPT=$P$G
 

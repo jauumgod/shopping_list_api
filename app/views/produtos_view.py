@@ -9,7 +9,7 @@ class ItemViewList(Resource):
 
     def get(self):
         items = produtos_service.ProdutosService.read_all()
-        IS = produtos_schemas.ProdutosSchemas(many=True, only=("nome", "quantidade"))
+        IS = produtos_schemas.ProdutosSchemas(many=True, only=("id", "nome", "quantidade"))
         return make_response(IS.jsonify(items), 201)
     
     def post(self):

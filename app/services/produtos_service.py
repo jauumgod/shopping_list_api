@@ -6,7 +6,8 @@ from ..models.produtos_model import ProdutosModel
 class ProdutosService():
 
     def create(produto):
-        query = ProdutosModel.query.filter_by(nome=produto.nome).first()
+        query = ProdutosModel.query.filter_by(nome = produto.nome).first()
+        
         if query.nome == produto.nome:
             return False
         

@@ -8,9 +8,11 @@ from ..services import produtolist_service
 class ProdutosListView(Resource):
 
     def get(self):
-        shopping = produtolist_service.ProdutoListService.read()
+        shopping = produtolist_service.ProdutoListService.read_info()
         ss = produtolist_schemas.ProdutoListSchema(many=True,only=("produto_id","quantidade"))
         return make_response(ss.jsonify(shopping), 201)
+    
+    
 
     def post(self):
         ss = produtolist_schemas.ProdutoListSchema()

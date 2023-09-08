@@ -1,5 +1,6 @@
 from ..models import produtolista_model
 from ..models.produtolista_model import ProdutoLista
+from ..models.produtos_model import ProdutosModel
 from app import db
 
 
@@ -20,3 +21,11 @@ class ProdutoListService():
     def read():
         query = ProdutoLista.query.all()
         return query
+    
+
+    def read_info():
+        lista_id = 1
+        produtos_associados = db.session.query(ProdutosModel.nome).\
+        join(ProdutoLista, ProdutoLista.produto_id_key == ProdutosModel.id).\
+        filter(ProdutoLista.lista_id_key == lista_id).all()
+        return produtos_associados
